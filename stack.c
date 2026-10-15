@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #define MAX 5
 int stack[MAX],top=-1;
 void  PUSH()
@@ -8,7 +8,7 @@ void  PUSH()
  printf("Stack is overflow");
  printf("Enter an element");
  scanf("%d",&value);
- a[++top]=value);
+ stack[++top]=value;
 };
 void POP()
 {
@@ -22,10 +22,38 @@ void POP()
         top--;
     }
 };
+void PEEK()
+{
+       if(top==-1)
+       {
+              printf("Stack is empty");
+       }
+       else
+       {
+              printf("The top element is %d",stack[top]);
+       }
+}
+void DISPLAY()
+{
+        int i;
+        if(top==-1)
+        {
+              printf("Stack is empty");
+        }
+        else
+        {
+              printf("The elements of the stack are\n")
+              for(i=top;i>=0;i--)
+              {
+                     printf("%d\n",stack[i]);
+              }
+        }
+}
 int main()
 {
   int choice;
-
+  while(1)
+  {
   printf("The Stack Operations are\n");
   printf("1.PUSH\n2.POP\n3.PEEK\n4.DISPLAY\n");
   printf("Enter your choice\n");
@@ -45,4 +73,5 @@ int main()
     exit()
   }
    return 0;
+}
 }
